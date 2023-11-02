@@ -6,20 +6,20 @@ This project is part of the Udacity Data Engineering Nanodegree program and is b
 ## Project Structure
 The project consists of the following components:
 
-1.  dags/run_elt_pipeline_dag.py: 
+1.  DAGs (*dags/run_elt_pipeline_dag.py*): 
 The main Airflow DAG (Directed Acyclic Graph) definition file. This file defines the sequence of tasks and their dependencies.
 
-2. plugins/operators:
+2. Operators (*plugins/operators*):
 - **stage_redshift.py**: Custom Airflow operator for loading data from S3 to Redshift.
 - **load_fact.py**: Custom Airflow operator for loading fact data into Redshift.
 - **load_dimension.py**: Custom Airflow operator for loading dimension data into Redshift.
 - **data_quality.py**: Custom Airflow operator for data quality checks.
 
-3. Queries:
-- sql_cmnds/final_project_sql_statements.py: SQL queries used for data transformation and quality checks.
-- sql_cmnds/create_tables.py: SQL script to create Redshift tables.
+3. Queries (*plugins/sql_cmds*):
+- **final_project_sql_statements.py**: SQL queries used for data transformation and quality checks.
+- **create_tables.py**: SQL script to create Redshift tables.
 
-4. Image of the final DAG (*dag_image.png*)
+4. Image of the final DAG (**dag_image.png**)
 
 ## Setting up the Environment
 Before running the DAG, make sure to set up your environment with the following steps:
