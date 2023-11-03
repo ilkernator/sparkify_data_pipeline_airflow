@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
-import os
 
 from airflow.decorators import dag, task_group
+from airflow.models import Variable
 from airflow.operators.empty import EmptyOperator
 from operators.data_quality import DataQualityOperator
 from operators.load_dimension import LoadDimensionOperator
@@ -19,11 +19,11 @@ DEFAULT_ARGS = {
     'retries': 1,
     'retry_delay': timedelta(minutes=1),
 }
-AWS_SECRET = os.environ.get('AWS_SECRET')
-AWS_KEY = os.environ.get('AWS_KEY')
+AWS_SECRET = Variable.get('AWS_SECRET') 
+AWS_KEY =  Variable.get('AWS_KEY')
 REDSHIFT_CONN_ID = "redshift"
 AWS_CONN_ID = "aws_credentials"
-AWS_BUCKET = "aws-nanodegree-course"
+AWS_BUCKET = Variable.get('s3_bucket')
 DESTINATION_DB = "public"
 
 
