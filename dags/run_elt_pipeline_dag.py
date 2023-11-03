@@ -19,8 +19,6 @@ DEFAULT_ARGS = {
     'retries': 1,
     'retry_delay': timedelta(minutes=1),
 }
-AWS_SECRET = Variable.get('AWS_SECRET') 
-AWS_KEY =  Variable.get('AWS_KEY')
 REDSHIFT_CONN_ID = "redshift"
 AWS_CONN_ID = "aws_credentials"
 AWS_BUCKET = Variable.get('s3_bucket')
